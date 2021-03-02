@@ -6,6 +6,8 @@ import ShoppingList from './components/ShoppingList';
 import {Provider} from 'react-redux'
 
 import store from './store'
+import ItemModel from './components/ItemModel';
+import{Container} from 'reactstrap'
 
 
 function App() {
@@ -13,7 +15,10 @@ function App() {
     <Provider store = {store}>
     <div className="App">
       <AppNavbar />
-      <ShoppingList />
+        <Container>
+          <ItemModel/>
+          <ShoppingList />
+        </Container>
     </div>
     </Provider>
   );

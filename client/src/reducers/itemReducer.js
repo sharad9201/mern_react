@@ -1,13 +1,9 @@
 import {v1 as uuid} from "uuid";
-import {ADD_ITEM,DELETE_ITEM, GET_ITEMS} from '../actions/types'
+import {ADD_ITEM,DELETE_ITEM, GET_ITEMS, ITEMS_LOADING} from '../actions/types'
 
 const initialState ={
-    items: [
-        { id:uuid(), name:'sharad'},
-        { id:uuid(), name:'swasti'},
-        { id:uuid(), name:'puru'},
-        { id:uuid(), name:'momo'}
-    ]
+    items: [],
+    loading:false
 }
 export default function(state = initialState, action){
     switch (action.type){
@@ -20,6 +16,16 @@ export default function(state = initialState, action){
                ...state,
                items:state.items.filter(item=>item.id !== action.payload)//payload is equal to id in next page
            }
+        case ADD_ITEM:
+        return{
+            ...state,
+            items:[action.payload, ...state.items]//payload is equal to id in next page
+        }
+        case ITEMS_LOADING:
+            return{
+                ...state,
+                loading:true
+            }
        default:
            return state;
     }
