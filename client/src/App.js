@@ -1,10 +1,13 @@
-// import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import AppNavbar from './components/AppNavbar'
 import './App.css';
+import ShoppingList from './components/ShoppingList';
 
 function App() {
   return (
     <div className="App">
-      <h1>hello world</h1>
+      <AppNavbar />
+      <ShoppingList />
     </div>
   );
 }
