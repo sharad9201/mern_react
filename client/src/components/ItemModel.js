@@ -9,7 +9,7 @@ import {
     Label,
     Input
 } from 'reactstrap'
-import {v1 as uuid} from "uuid";
+// import {v1 as uuid} from "uuid";
 
 import {connect} from 'react-redux'
 import {addItem} from '../actions/itemActions'
@@ -32,7 +32,6 @@ class ItemModel extends Component {
         e.preventDefault() // prevents from submitting form in default
 
         const newItem ={
-            id: uuid(),
             name: this.state.name
         }
 
